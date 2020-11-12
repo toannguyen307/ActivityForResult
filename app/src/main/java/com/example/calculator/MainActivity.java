@@ -36,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
                 if (!TextUtils.isEmpty(etNumber.getText().toString())) {
                     Intent intent = new Intent(MainActivity.this, Activity2.class);
                     int number1 = Integer.parseInt(etNumber.getText().toString());
-                    intent.putExtra("num", number1);
+                    Bundle bundle= new Bundle();
+                    bundle.putInt("num",number1);
+                    intent.putExtras(bundle);
                     startActivityForResult(intent,REQUEST_CODE);
                 }
             }

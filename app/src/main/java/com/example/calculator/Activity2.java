@@ -26,9 +26,9 @@ public class Activity2 extends AppCompatActivity {
     }
 
     public void getData(){
-        Intent intent= getIntent();
-        if(intent!=null) {
-            number1 = intent.getIntExtra("num", 0);
+        Bundle bundle= getIntent().getExtras();
+        if(bundle!=null) {
+            number1 = bundle.getInt("num");
             txtResult.setText(number1 + "");
         }
     }
